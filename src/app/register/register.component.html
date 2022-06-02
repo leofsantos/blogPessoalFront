@@ -1,55 +1,100 @@
 <div class="container-fluid">
-    <div class="row">
-        <div class="col-md-6" id="img-bg">
+  <div class="row">
+    <div class="col-md-6" id="img-bg"></div>
 
+    <div class="col-md-6 mt-5 mb-5">
+      <div class="row d-flex justify-content-center">
+        <div class="col-md-10">
+          <h1 class="text-center">Register</h1>
+
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input
+              [(ngModel)]="usuario.nome"
+              class="form-control"
+              type="text"
+              name="name"
+              id="name"
+              placeholder="Your name"
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="username">Username</label>
+            <input
+              [(ngModel)]="usuario.usuario"
+              class="form-control"
+              type="text"
+              name="username"
+              id="username"
+              placeholder="Your username"
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="photo">Photo url</label>
+            <input
+              [(ngModel)]="usuario.foto"
+              class="form-control"
+              type="text"
+              name="photo"
+              id="photo"
+              placeholder="Photo url"
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="password">Password</label>
+            <input
+              (input)="confirmSenha($event)"
+              class="form-control"
+              type="text"
+              name="password"
+              id="password"
+              placeholder="Your password"
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="confirmPassword">Confirm password</label>
+            <input
+              class="form-control"
+              type="text"
+              name="confirmPassword"
+              id="confirmPassword"
+              placeholder="Confirm your password"
+              [(ngModel)]="usuario.senha"
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="type">User type</label>
+            <select
+              (change)="tipoUser($event)"
+              name="type"
+              id="type"
+              class="form-control"
+            >
+              <option>Select your type</option>
+              <option value="regular">Regular</option>
+              <option value="admin">Administrator</option>
+            </select>
+          </div>
+
+          <div class="d-flex justify-content-center">
+            <button
+              class="btn btn-danger mr-4"
+              type="submit"
+              routerLink="/login"
+            >
+              Cancel
+            </button>
+            <button class="btn btn-success" type="submit" (click)="register()">
+              Register
+            </button>
+          </div>
         </div>
-
-        <div class="col-md-6 mt-5 mb-5">
-            <div class="row d-flex justify-content-center">
-                <div class="col-md-10">
-                    <h1 class="text-center">Register</h1>
-
-                    <div class="form-group">
-                        <label for="name">Name</label>
-                        <input class="form-control" type="text" name="name" id="name" placeholder="Your name">
-                    </div>
-
-                    <div class="form-group">
-                        <label for="username">Username</label>
-                        <input class="form-control" type="text" name="username" id="username" placeholder="Your username">
-                    </div>
-
-                    <div class="form-group">
-                        <label for="photo">Photo url</label>
-                        <input class="form-control" type="text" name="photo" id="photo" placeholder="Photo url">
-                    </div>
-
-                    <div class="form-group">
-                        <label for="password">Password</label>
-                        <input class="form-control" type="text" name="password" id="password" placeholder="Your password">
-                    </div>
-
-                    <div class="form-group">
-                        <label for="confirmPassword">Confirm password</label>
-                        <input class="form-control" type="text" name="confirmPassword" id="confirmPassword" placeholder="Confirm your password">
-                    </div>
-
-                    <div class="form-group">
-                        <label for="type">User type</label>
-                        <select name="type" id="type" class="form-control">
-                            <option>Select your type</option>
-                            <option value="regular">Regular</option>
-                            <option value="admin">Administrator</option>
-                        </select>
-                    </div>
-                    
-
-                    <div class="d-flex justify-content-center">
-                        <button class="btn btn-danger mr-4" type="submit" routerLink="/login">Cancel</button>
-                        <button class="btn btn-success" type="submit">Register</button>
-                    </div>
-                </div>
-            </div>
-        </div>
+      </div>
     </div>
+  </div>
 </div>
