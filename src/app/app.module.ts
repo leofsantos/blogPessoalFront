@@ -11,6 +11,7 @@ import { RegisterComponent } from './register/register.component';
 import { LoginComponent } from './login/login.component';
 import { FooterComponent } from './footer/footer.component';
 import { HomeComponent } from './home/home.component';
+import { ThemeComponent } from './theme/theme.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { HomeComponent } from './home/home.component';
     LoginComponent,
     FooterComponent,
     HomeComponent,
+    ThemeComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule],
   providers: [{
