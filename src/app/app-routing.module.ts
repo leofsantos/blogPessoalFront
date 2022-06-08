@@ -1,8 +1,11 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { ThemeDeleteComponent } from './delete/theme-delete/theme-delete.component';
+import { ThemeEditComponent } from './edit/theme-edit/theme-edit.component';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
+import { ThemeComponent } from './theme/theme.component';
 
 const routes: Routes = [
 
@@ -10,7 +13,10 @@ const routes: Routes = [
 
   {path:'login', component: LoginComponent},
   {path:'register', component: RegisterComponent},
-  {path: 'home', component: HomeComponent}
+  {path: 'home', component: HomeComponent},
+  {path: 'theme', component: ThemeComponent},
+  {path: 'edit-theme/:id', component: ThemeEditComponent},
+  {path: 'delete-theme/:id', component: ThemeDeleteComponent}
 ];
 
 @NgModule({
