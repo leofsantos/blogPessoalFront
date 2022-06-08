@@ -38,7 +38,7 @@
             <table class="table table-hover">
                 <thead>
                   <tr>
-                    <th scope="col">#</th>
+                    <th scope="col">Id</th>
                     <th scope="col">Description</th>
                     <th scope="col" class="text-right">Modify</th>
                   </tr>
@@ -48,8 +48,8 @@
                     <th>{{theme.id}}</th>
                     <td>{{theme.descricao}}</td>
                     <td class="d-flex justify-content-end">
-                        <button class="btn btn-info mr-3">Edit</button>
-                        <button class="btn btn-danger">Delete</button>
+                        <button class="btn btn-info mr-3" [routerLink]="['/edit-theme', theme.id]">Edit</button>
+                        <button class="btn btn-danger" [routerLink]="['/delete-theme', theme.id]">Delete</button>
                     </td>
                   </tr>
                 </tbody>

@@ -19,7 +19,19 @@ export class ThemeService {
     return this.http.get<Tema[]>('https://timetravellers.herokuapp.com/tema/all', this.token)
   }
 
+  getByIdTheme(id: number): Observable<Tema>{
+    return this.http.get<Tema>(`https://timetravellers.herokuapp.com/tema/${id}`, this.token)
+  }
+
   postTheme(theme: Tema): Observable<Tema>{
     return this.http.post<Tema>('https://timetravellers.herokuapp.com/tema/criar',theme, this.token)
+  }
+
+  putTheme(theme: Tema): Observable<Tema>{
+    return this.http.put<Tema>('https://timetravellers.herokuapp.com/tema/atualizar', theme, this.token)
+  }
+
+  deleteTheme(id: number){
+    return this.http.delete(`https://timetravellers.herokuapp.com/tema/${id}`, this.token)
   }
 }
