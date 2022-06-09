@@ -38,6 +38,7 @@ export class HomeComponent implements OnInit {
 
     this.getAllThemes()
     this.getAllPosts()
+    this.authService.refreshtoken()
   }
 
   getAllThemes(){

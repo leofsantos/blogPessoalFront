@@ -81,7 +81,7 @@
         <div class="card text-center" *ngFor="let post of postsList">
           <div class="card-body">
             <h5 class="card-title m-0">{{post.titulo}}</h5>
-            <small class="text-muted">Theme: {{post.tema.descricao} </small>
+            <small class="text-muted">Theme: {{theme.descricao}} </small>
             <p class="card-text mt-3">{{post.texto}}</p>
             <p class="card-text"><small class="text-muted">{{post.dia | date: 'dd/MM/yyy'}} at {{post.dia | date: 'HH:mm'}}</small></p>
             <p class="card-text"><small class="text-muted">by: {{post.usuario.nome}}</small></p>
@@ -100,9 +100,13 @@
         <div class="card text-center" *ngFor="let post of user.postagem">
           <div class="card-body">
             <h5 class="card-title m-0">{{post.titulo}}</h5>
-            <small class="text-muted">Theme: {{post.tema.descricao} </small>
+            <small class="text-muted">Theme: {{post.tema.descricao}} </small>
             <p class="card-text mt-3">{{post.texto}}</p>
             <p class="card-text"><small class="text-muted">{{post.dia | date: 'dd/MM/yyy'}} at {{post.dia | date: 'HH:mm'}}</small></p>
+
+            <a [routerLink]="['/edit-post', post.id]" class="text-info mr-3" href="">Edit</a>
+            <a [routerLink]="['/delete-post', post.id]" class="text-danger" href="">Delete</a>
+
           </div>
         </div>
       </div>
@@ -119,9 +123,10 @@
         <div class="card text-center" *ngFor="let post of theme.postagem">
           <div class="card-body">
             <h5 class="card-title m-0">{{post.titulo}}</h5>
-            <small class="text-muted">Theme: {{post.tema.descricao} </small>
+            <small class="text-muted">Theme: {{theme.descricao}} </small>
             <p class="card-text mt-3">{{post.texto}}</p>
             <p class="card-text"><small class="text-muted">{{post.dia | date: 'dd/MM/yyy'}} at {{post.dia | date: 'HH:mm'}}</small></p>
+            <p class="card-text"><small class="text-muted">by: {{post.usuario.nome}}</small></p>
           </div>
         </div>
       </div>
