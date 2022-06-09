@@ -19,7 +19,19 @@ export class PostsService {
     return this.http.get<Postagem[]>('https://timetravellers.herokuapp.com/postagens/all', this.token)
   }
 
+  getByIdPost(id: number): Observable<Postagem>{
+    return this.http.get<Postagem>(`https://timetravellers.herokuapp.com/postagens/${id}`, this.token)
+  }
+
   postPosts(post: Postagem): Observable<Postagem>{
     return this.http.post<Postagem>('https://timetravellers.herokuapp.com/postagens/publicar', post, this.token)
+  }
+
+  putPosts(post: Postagem): Observable<Postagem>{
+    return this.http.put<Postagem>('https://timetravellers.herokuapp.com/postagens/atualizar', post, this.token)
+  }
+
+  deletePost(id: number){
+    return this.http.delete(`https://timetravellers.herokuapp.com/postagens/${id}`, this.token)
   }
 }
