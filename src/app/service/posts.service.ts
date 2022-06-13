@@ -15,6 +15,12 @@ export class PostsService {
     headers: new HttpHeaders().set('Authorization',environment.token)
   }
 
+  refreshtoken(){
+    this.token = {
+      headers: new HttpHeaders().set('Authorization',environment.token)
+    }
+  }
+
   getAllPosts(): Observable<Postagem[]>{
     return this.http.get<Postagem[]>('https://timetravellers.herokuapp.com/postagens/all', this.token)
   }

@@ -30,7 +30,7 @@ export class LoginComponent implements OnInit {
 
       this.router.navigate(['/home'])
     }, erro =>{
-      if(erro.status == 500){
+      if(erro.status == 400){
         alert('Wrong user and/or password')
       }
     })

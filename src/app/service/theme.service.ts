@@ -15,6 +15,12 @@ export class ThemeService {
     headers: new HttpHeaders().set('Authorization',environment.token)
   }
 
+  refreshtoken(){
+    this.token = {
+      headers: new HttpHeaders().set('Authorization',environment.token)
+    }
+  }
+
   getAllThemes(): Observable<Tema[]>{
     return this.http.get<Tema[]>('https://timetravellers.herokuapp.com/tema/all', this.token)
   }

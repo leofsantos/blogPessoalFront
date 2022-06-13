@@ -23,6 +23,7 @@ export class ThemeComponent implements OnInit {
       this.router.navigate(['/login'])
     }
     this.findAllThemes()
+    this.themeService.refreshtoken()
   }
 
   findAllThemes(){
