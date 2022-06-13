@@ -30,6 +30,10 @@ export class AuthService {
     return this.http.post<Usuario>('https://timetravellers.herokuapp.com/usuario/cadastrar', usuario)
   }
 
+  update(usuario: Usuario): Observable<Usuario>{
+    return this.http.put<Usuario>('https://timetravellers.herokuapp.com/usuario/atualizar', usuario, this.token)
+  }
+
   getByIdUser(id: number): Observable<Usuario>{
     return this.http.get<Usuario>(`https://timetravellers.herokuapp.com/usuario/${id}`, this.token)
   }

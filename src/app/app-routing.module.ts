@@ -4,6 +4,7 @@ import { PostDeleteComponent } from './delete/post-delete/post-delete.component'
 import { ThemeDeleteComponent } from './delete/theme-delete/theme-delete.component';
 import { PostEditComponent } from './edit/post-edit/post-edit.component';
 import { ThemeEditComponent } from './edit/theme-edit/theme-edit.component';
+import { UserEditComponent } from './edit/user-edit/user-edit.component';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
@@ -15,12 +16,13 @@ const routes: Routes = [
 
   {path:'login', component: LoginComponent},
   {path:'register', component: RegisterComponent},
-  {path: 'home', component: HomeComponent},
-  {path: 'theme', component: ThemeComponent},
-  {path: 'edit-theme/:id', component: ThemeEditComponent},
-  {path: 'delete-theme/:id', component: ThemeDeleteComponent},
-  {path: 'edit-post/:id', component: PostEditComponent},
-  {path: 'delete-post/:id', component: PostDeleteComponent}
+  {path:'home', component: HomeComponent},
+  {path:'theme', component: ThemeComponent},
+  {path:'edit-theme/:id', component: ThemeEditComponent},
+  {path:'delete-theme/:id', component: ThemeDeleteComponent},
+  {path:'edit-post/:id', component: PostEditComponent},
+  {path:'delete-post/:id', component: PostDeleteComponent},
+  {path:'edit-user/:id', component: UserEditComponent}
 ];
 
 @NgModule({

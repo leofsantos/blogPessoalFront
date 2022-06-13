@@ -32,6 +32,7 @@ export class HomeComponent implements OnInit {
     private authService: AuthService) { }
 
   ngOnInit() {
+    window.scroll(0,0)
     if(environment.token==''){
       this.router.navigate(['/login'])
     }
@@ -39,6 +40,8 @@ export class HomeComponent implements OnInit {
     this.getAllThemes()
     this.getAllPosts()
     this.authService.refreshtoken()
+    this.postService.refreshtoken()
+    this.themeService.refreshtoken()
   }
 
   getAllThemes(){
